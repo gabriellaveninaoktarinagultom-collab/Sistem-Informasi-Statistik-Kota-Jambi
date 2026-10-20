@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latihan HTML statistik Kota Jambi.">
+  <title>Sistem Informasi Statistik Kota Jambi</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #eef2f5;
+      color: #263238;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .halaman {
+      width: 94%;
+      max-width: 1100px;
+      margin: 25px auto;
+      background: white;
+      border: 1px solid #cbd5df;
+      box-shadow: 0 5px 20px #00000012;
+    }
+    .baris-atas {
+      padding: 8px 20px;
+      background: #123b52;
+      color: white;
+      text-align: right;
+      font-size: 13px;
+    }
+    .baris-atas a { color: white; }
+    header {
+      padding: 25px 15px;
+      background: #eaf5f4;
+      border-bottom: 4px solid #168b80;
+      text-align: center;
+    }
+    .logo { display: block; width: 90px; height: auto; margin: 0 auto 12px; }
+    header h1 { margin: 0; color: #123b52; font-size: 30px; }
+    header h2 { margin: 6px 0; font-size: 23px; }
+    header p { margin: 0; color: #526570; }
+    .berita {
+      display: flex;
+      align-items: center;
+      background: #fff6da;
+      border-bottom: 1px solid #ead795;
+    }
+    .label {
+      padding: 12px;
+      background: #e8b84b;
+      color: #302400;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .area-gerak { flex: 1; min-width: 0; overflow: hidden; }
+    .teks-gerak {
+      display: inline-block;
+      min-width: 100%;
+      padding-left: 100%;
+      white-space: nowrap;
+      animation: berjalan 25s linear infinite;
+    }
+    @keyframes berjalan {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+    .berita:hover .teks-gerak { animation-play-state: paused; }
+    .konten { display: flex; }
+    aside {
+      flex: 0 0 210px;
+      padding: 20px 15px;
+      background: #f7fafc;
+      border-right: 1px solid #dce4e9;
+    }
+    aside h3 { margin-top: 0; color: #123b52; }
+    nav a {
+      display: block;
+      margin-bottom: 8px;
+      padding: 10px;
+      color: #21485d;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    nav a:hover, nav a:focus-visible { background: #dcefeb; }
+    main { flex: 1; min-width: 0; padding: 24px; }
+    section { margin-bottom: 28px; scroll-margin-top: 15px; }
+    main h2 { margin-top: 0; color: #123b52; font-size: 21px; }
+    .kartu { padding: 16px; background: #eaf5f4; border: 1px solid #bcded8; }
+    .kartu p { margin: 6px 0; }
+    .nilai { color: #12645f; font-size: 28px; font-weight: bold; }
+    .catatan {
+      padding: 10px;
+      background: #fff8e7;
+      border-left: 4px solid #e8b84b;
+      font-size: 14px;
+    }
+    .bungkus-tabel { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    caption { padding: 10px 0; text-align: left; font-weight: bold; }
+    th, td { padding: 9px 10px; border: 1px solid #b9c8d0; }
+    th { background: #176b70; color: white; text-align: center; }
+    tbody tr:nth-child(even) { background: #f1f7f8; }
+    .angka { text-align: right; white-space: nowrap; }
+    tfoot { background: #dcefeb; font-weight: bold; }
+    .sumber { color: #526570; font-size: 13px; }
+    .daftar-sumber li { margin-bottom: 8px; }
+    .daftar-sumber a { color: #176b70; overflow-wrap: anywhere; }
+    footer {
+      padding: 20px;
+      background: #123b52;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+    footer p { margin: 4px 0; }
+    @media (max-width: 720px) {
+      .konten { flex-direction: column; }
+      aside { flex-basis: auto; border-right: 0; }
+      header h1 { font-size: 23px; }
+      main { padding: 16px; }
+      .label { padding: 12px 8px; font-size: 13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .teks-gerak { animation: none; padding: 8px; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="halaman">
+    <div class="baris-atas">Praktikum Alprog HTML | <a href="#sumber">Sumber Data</a></div>
+    <header>
+      <img src="logo-kota-jambi.png" alt="Lambang Kota Jambi" class="logo">
+      <h1>SISTEM INFORMASI STATISTIK</h1>
+      <h2>Kota Jambi</h2>
+      <p>Informasi kependudukan dan statistik wilayah</p>
+    </header>
+    <div class="berita" aria-label="Informasi ekspor Provinsi Jambi">
+      <div class="label">INFO EKSPOR</div>
+      <div class="area-gerak">
+        <span class="teks-gerak">Nilai ekspor asal Provinsi Jambi tahun 2026, bulan Agustus: US$198,04 juta. Cakupan data: Provinsi Jambi, bukan khusus Kota Jambi.</span>
+      </div>
+    </div>
+    <div class="konten">
+      <aside>
+        <h3>Menu Statistik</h3>
+        <nav aria-label="Navigasi statistik">
+          <a href="#penduduk">Penduduk Tahun 2026</a>
+          <a href="#kecamatan">Penduduk Kecamatan 2024</a>
+          <a href="#ekspor">Ekspor Agustus 2026</a>
+          <a href="#sumber">Sumber Data</a>
+        </nav>
+      </aside>
+      <main>
+        <section id="penduduk">
+          <h2>Penduduk Kota Jambi Tahun 2026</h2>
+          <div class="kartu">
+            <p>Jumlah penduduk Kota Jambi</p>
+            <p class="nilai">649,3 ribu jiwa</p>
+            <p>Setara dengan 649.300 jiwa.</p>
+          </div>
+          <div class="bungkus-tabel">
+            <table>
+              <caption>Penduduk menurut wilayah, tahun 2026</caption>
+              <thead>
+                <tr><th scope="col">Wilayah</th><th scope="col">Tahun</th><th scope="col">Penduduk (ribu jiwa)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Kota Jambi</td><td>2026</td><td class="angka">649,3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="sumber">Sumber: BPS Provinsi Jambi, Penduduk Menurut Kabupaten/Kota di Provinsi Jambi (Ribu Jiwa), 2026.</p>
+        </section>
+        <section id="kecamatan">
+          <h2>Tabel Penduduk Kota Jambi Tahun 2024</h2>
+          <p class="catatan">Rincian kecamatan mengikuti gambar tugas tahun 2024, bukan rincian penduduk tahun 2026.</p>
+          <div class="bungkus-tabel">
+            <table>
+              <caption>Jumlah penduduk menurut kecamatan (jiwa)</caption>
+              <thead>
+                <tr><th scope="col">No</th><th scope="col">Nama Kecamatan</th><th scope="col">Jumlah Penduduk</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Kota Baru</td><td class="angka">85.722</td></tr>
+                <tr><td>2</td><td>Alam Barajo</td><td class="angka">116.253</td></tr>
+                <tr><td>3</td><td>Jambi Selatan</td><td class="angka">59.514</td></tr>
+                <tr><td>4</td><td>Paal Merah</td><td class="angka">113.215</td></tr>
+                <tr><td>5</td><td>Jelutung</td><td class="angka">60.665</td></tr>
+                <tr><td>6</td><td>Pasar Jambi</td><td class="angka">11.419</td></tr>
+                <tr><td>7</td><td>Telanaipura</td><td class="angka">50.284</td></tr>
+                <tr><td>8</td><td>Danau Sipin</td><td class="angka">44.302</td></tr>
+                <tr><td>9</td><td>Danau Teluk</td><td class="angka">13.091</td></tr>
+                <tr><td>10</td><td>Pelayangan</td><td class="angka">13.205</td></tr>
+                <tr><td>11</td><td>Jambi Timur</td><td class="angka">67.431</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="2">Jumlah Kota Jambi</td><td class="angka">635.101</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <p class="sumber">Sumber: gambar tabel penduduk Kota Jambi tahun 2024 pada tugas.</p>
+        </section>
+        <section id="ekspor">
+          <h2>Ekspor Provinsi Jambi — Agustus 2026</h2>
+          <div class="kartu">
+            <p>Nilai ekspor asal Provinsi Jambi</p>
+            <p class="nilai">US$198,04 juta</p>
+            <p>Periode: Agustus 2026 | Cakupan: Provinsi Jambi</p>
+            <p class="sumber">Sumber: PRISMA BPS Jambi.</p>
+          </div>
+        </section>
+        <section id="sumber">
+          <h2>Sumber dan Keterangan</h2>
+          <ul class="daftar-sumber">
+            <li><a href="https://jambi.bps.go.id/id/statistics-table/2/MjEwOCMy/penduduk-menurut-kabupaten-kota-di-provinsi-jambi.html">BPS: Penduduk Menurut Kabupaten/Kota di Provinsi Jambi</a></li>
+            <li><a href="https://jambi.bps.go.id/id/statistics-table/2/NDc2IzI=/nilai-ekspor-asal-provinsi-jambi-us-.html">BPS: Nilai Ekspor Asal Provinsi Jambi</a></li>
+            <li><a href="https://prisma.bpsjambi.id/indicator/1500">PRISMA: Indikator Statistik Provinsi Jambi</a></li>
+          </ul>
+          <p class="sumber">Halaman latihan HTML, bukan situs resmi BPS. Setiap data ditampilkan sesuai cakupan dan periodenya.</p>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>SISTEM INFORMASI STATISTIK KOTA JAMBI</p>
+      <p>Alprog | Kependudukan dan informasi ekspor</p>
+    </footer>
+  </div>
+</body>
+</html>
